@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>PORTFOLIO</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              PORTFOLIO
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About Me</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="exjs.html"> JavaScript Work </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="ex_api.html"> Api Work </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="chart.html"> Chart</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sheet.html">Sheet</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- service section -->
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Examples of JavaScript Work
+        </h2>
+        <img src="images/plug.png" alt="">
+      </div>
+      <d class="service_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/2.jpg" class="img1" alt="">
+          </div>
+          <div class="detail-box">
+            <style>
+              /* กำหนดระยะห่างระหว่าง input */
+              input {
+                margin-bottom: 10px;
+              }
+            </style>
+
+            <h5>Find the diagonal length of the rectangle.</h5>
+            <input id="base" type="text" placeholder="Enter base"> <br>
+            <input id="height" type="text" placeholder="Enter height ">
+            <h6>Diagonal length: <span id="show7"></span></h6>
+            <button onclick="calculateHypotenuse()"> Calculate </button>
+
+            <script>
+              function calculateHypotenuse() {
+                // ดึงค่าจาก input fields และแปลงเป็นตัวเลข
+                var base = parseFloat(document.getElementById('base').value);
+                var height = parseFloat(document.getElementById('height').value);
+
+                // ตรวจสอบว่าข้อมูลที่รับมาเป็นตัวเลขหรือไม่
+                if (isNaN(base) || isNaN(height)) {
+                  document.getElementById('show7').innerHTML = "Please enter a number";
+                } else {
+                  // คำนวณความยาวของเส้นทแยงมุม
+                  var hypotenuse = Math.sqrt(base * base + height * height);
+
+                  // แสดงผลลัพธ์
+                  document.getElementById('show7').innerHTML = "" + hypotenuse.toFixed(2);
+                }
+              }
+            </script>
+
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/4.jpg" class="img1" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              <br>
+              A - Z
+            </h5>
+            <span id="demo"></span>
+          </div>
+          <script>
+            function printAlphabets() {
+              // สร้างตัวแปรเพื่อเก็บตัวอักษร A-Z
+              const alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+              // ใช้ forEach เพื่อวนลูปผ่านทุกตัวอักษร
+              alphabets.split('').forEach((alphabet, index) => {
+                // ใช้ setTimeout เพื่อกำหนดระยะเวลาการแสดงผล
+                setTimeout(() => {
+                  document.getElementById("demo").innerHTML = alphabet;
+                  console.log(alphabet);
+                }, index * 1000); // 1000 milliseconds = 1 วินาที
+              });
+            }
+            printAlphabets();
+          </script>
+        </div>
+        <div class="box ">
+          <div class="img-box">
+            <img src="images/5.jpg" class="img1" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Find days per minute
+            </h5>
+            <input type="text" id="daysInput"><br>
+            <span id="show2"></span> <br>
+            <button onclick="dayToSeconds()">Calculate</button>
+          </div>
+          <script>
+            function dayToSeconds() {
+              let inputDays = document.getElementById("daysInput").value;
+              if (!isNaN(inputDays)) {
+                let seconds = inputDays * 86400;
+                document.getElementById(
+                  "show2"
+                ).innerText = `จำนวนวัน ${inputDays} วัน: ${seconds} นาที`;
+              } else {
+                alert("Please enter a valid number of days.");
+              }
+            }
+          </script>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/6.jpg" class="img1" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Date and time
+            </h5>
+            <p id="datetime"></p>
+          </div>
+          <script>
+            function displayDatetime() {
+              const thaiOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false, timeZoneName: 'short' };
+              const thaiDatetime = new Date().toLocaleString('th-TH', thaiOptions);
+              document.getElementById('datetime').innerText = ` ${thaiDatetime}`;
+            }
+            setInterval(displayDatetime, 1000);
+            displayDatetime();
+          </script>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/7.jpg" class="img1" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Find the circumference length.
+            </h5>
+            <input id="input" type="text" placeholder="Radius"> <br>
+            <button onclick="calculateAndDisplayCircumference()">Calculate</button> <br>
+            Circumference length : <span id="result"></span>
+          </div>
+          <script>
+            function calculateCircleCircumference(radius) {
+              return 2 * Math.PI * radius;
+            }
+            function calculateAndDisplayCircumference() {
+              let inputElement = document.getElementById('input');
+              let resultElement = document.getElementById('result');
+
+              let radius = parseFloat(inputElement.value);
+
+              if (!isNaN(radius)) {
+                let circumference = calculateCircleCircumference(radius);
+                resultElement.textContent = circumference.toFixed(2);
+              } else {
+                resultElement.textContent = 'กรุณากรอกค่าที่ถูกต้อง';
+              }
+            }
+          </script>
+        </div>
+            </div>
+            <div class="btn-box">
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- end service section -->
+
+
+        <!-- info section -->
+
+        <section class="info_section layout_padding">
+          <div class="container">
+            <div class="info_contact">
+              <div class="row">
+                <div class="col-md-4">
+                  <a href="">
+                    <img src="images/location-white.png" alt="">
+                    <span>
+                      Chanatda Khamngoen
+                    </span>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <a href="">
+                    <img src="images/fb.png" alt="">
+                    <span>
+                      FB : Earn Chanatda
+                    </span>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <a href="">
+                    <img src="images/instagram.png" alt="">
+                    <span>
+                      IG : earnbaba._
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8 col-lg-9">
+                <div class="info_form">
+                  <form action="">
+                    <input type="text" placeholder="Enter your email">
+                    <button>
+                      subscribe
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-3">
+                <div class="info_social">
+                  <div>
+                    <a href="https://www.facebook.com/profile.php?id=100017898550972">
+                      <img src="images/fb.png" alt="">
+                    </a>
+                  </div>
+                  <div>
+                    <a href="">
+                      <img src="images/twitter.png" alt="">
+                    </a>
+                  </div>
+                  <div>
+                    <a href="">
+                      <img src="images/linkedin.png" alt="">
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.instagram.com/earnbaba._?fbclid=IwAR13MCilh1l5ewAc3nDmzSupiPUauPLZJIiuhGUK2F22jqnpC5kovKeXkII">
+                      <img src="images/instagram.png" alt="">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!-- end info section -->
+
+        <!-- footer section -->
+        <footer class="container-fluid footer_section">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-7 col-md-9 mx-auto">
+                <p>
+                  &copy; 2019 All Rights Reserved By
+                  <a href="https://html.design/">Free Html Templates</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- footer section -->
+
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+
+
+</body>
+
+</html>
